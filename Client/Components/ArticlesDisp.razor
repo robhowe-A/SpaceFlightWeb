@@ -1,0 +1,42 @@
+﻿@page "/ArticlesDisp"
+@inject IHttpClientFactory _clientFactory
+
+<PageTitle>Articles</PageTitle>
+
+@if (articles == null)
+{
+    <style>
+        main {
+            background: var(--secondary1);
+        }
+    </style>
+    <p><em>Loading...</em></p>
+}
+else{
+    <div class=" text-center">
+        <div id="art-container">
+            @foreach (var service in articles)
+            {
+                <div class="article">
+                    <div class="art_grid_container row">
+                        <img class="art_picture col" src="@service.textURL" alt="Article Picture">
+                        <h3 class="art_header col"><a href="@service.url" target="_blank" class="link--primary">@service.title</a></h3>
+                        <div class="art_descrip col">@service.summary<br><br>
+                            <h5 class="art_date">@service.date</h5>
+                        </div>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+}
+
+@code {
+    private Article[]? articles;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = _clientFactory.CreateClient("APIClient");
+        articles = await httpClient.GetFromJsonAsync<Article[]>("/SpaceFlightAPI/articles");
+    }
+}

@@ -1,0 +1,103 @@
+﻿
+.art_grid_container {
+    color: var(--silver);
+    margin-bottom: 3em;
+    object-fit: cover;
+    display: grid !important;
+    grid-template-areas: 
+        "picture picture picture picture"
+        "picture picture picture picture" 
+        "title title title title" 
+        "descrip descrip descrip descrip";
+    grid-template-rows: min-content;
+    grid-template-columns: repeat(4, 2fr) auto;
+    transition: transform 400ms;
+    width: 75vw;
+    margin: auto;
+}
+
+.art_grid_container:first-of-type {
+    margin-top: 5em;
+}
+
+.art_grid_container:hover {
+    box-shadow: 8px 8px 3px rgba(10, 10, 10, .4);
+}
+
+.art_picture.col {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    grid-area: picture;
+    padding: 0;
+    object-fit: cover;
+}
+
+.art_header.col {
+    background: rgba(10, 10, 10, 0.7);
+    grid-area: title;
+    padding-inline: 1em;
+    padding-block: .65em;
+    display: grid;
+    align-items: center;
+}
+
+.art_header.a {
+    color: var(--silver);
+}
+
+.art_descrip.col {
+    background: rgba(10, 10, 10, 0.3);
+    grid-area: descrip;
+    padding-inline: 2em;
+    padding-block: 1.3em;
+}
+
+.art_header, .art_descrip.col {
+    margin: 0;
+}
+
+.col {
+    padding: 0;
+}
+
+.art_date {
+    color: var(--dark_silver);
+}
+
+/*Media query*/
+@media (min-width: 576px) {
+    .art_grid_container {
+        grid-template-areas: 
+            "picture picture picture picture" 
+            "picture picture picture picture" 
+            "title title descrip descrip" 
+            "title title descrip descrip";
+    }
+
+        .art_grid_container:hover { /*articles hover media query*/
+            transform: scale(1.07);
+        }
+}
+
+@media (min-width: 768px) {
+    .art_grid_container {
+        grid-template-areas: 
+            "picture picture picture title" 
+            "picture picture picture title" 
+            "picture picture picture title" 
+            "descrip descrip descrip descrip";
+        margin-bottom: 5em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .art_grid_container {
+        grid-template-areas: 
+            "picture picture picture title" 
+            "picture picture picture title" 
+            "picture picture picture descrip" 
+            "picture picture picture descrip";
+        margin-bottom: 7em;
+    }
+}

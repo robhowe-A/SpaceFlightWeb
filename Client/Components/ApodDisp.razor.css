@@ -1,0 +1,86 @@
+﻿
+.nasa__card {
+    padding: 1.2em;
+    border: 3px solid var(--white);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    text-align: center;
+}
+
+#nasa__apod {
+    margin-inline: 0 auto;
+    border: none;
+    background-color: rgba(10, 10, 10, 0.7);
+    box-shadow: -8px 10px 7px rgba(10, 10, 10, 0.4);
+    color: silver;
+    padding: 0;
+    max-width: 25em;
+    grid-column: 4/-2;
+    grid-row: 1/3;
+    margin: 5em auto;
+}
+
+#nasa__apod img {
+    top: 0;
+}
+#nasa__apod h2 { 
+    margin: .3em; 
+    padding: 0;
+}
+
+#nasa__apod h3{
+    padding-block: 0.4em;
+    font-size: 1em;
+}
+
+
+
+#nasa__apod div .btn:first-child {
+    left: 15px;
+}
+#nasa__apod div .btn:last-child {
+    right: 15px;
+}
+
+/* Screen size small */
+@media (min-width: 300px) {
+
+    #nasa__apod {
+        width: 80%;
+    }
+}
+
+/* Screen size medium */
+@media (min-width: 500px) {
+
+    .nasa__card div {
+        margin-block: auto 5%;
+    }
+
+    #nasa__apod .btn {
+        margin: 2em;
+    }
+
+    #nasa__apod div {
+        display: flex;
+        position: relative;
+        width: 80%;
+        height: 3em;
+    }
+
+        #nasa__apod div .btn {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+        }
+
+    #apiTitle {
+        padding-top: 0.4em;
+        padding-bottom: 1em;
+    }
+}
