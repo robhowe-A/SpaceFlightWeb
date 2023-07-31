@@ -1,6 +1,6 @@
-This repository is a stripped version of the live project development. Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is all the coding it took to bring up the site.  
+This repository is a stripped version of the live project development. Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is the site's custom C# implemented in the site.  
 
-Spaceflight.dev is hosted on IIS web server as ASP.NET/BLAZOR WebAssembly. (www.spaceflight.dev)  
+## Note: The site [www.spaceflight.dev](https://www.spaceflight.dev) is OFFLINE/unreachable due to ISP change. Hopefully this is temporary, while I work with them.
 
 ## Features: Blazor web application using:  
 1. Razor components implementation (C#, HTML, CSS)  
