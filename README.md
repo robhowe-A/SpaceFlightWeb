@@ -1,6 +1,6 @@
 This repository is a stripped version of the live project development [www.spaceflight.dev](https://www.spaceflight.dev). Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is the site's custom C# implemented in the site.  
 
-:::image type="content" source="Web capture_5-11-2023_10132_www.spaceflight.dev.jpeg" alt-text="www.spaceflight.dev":::
+:::image type="content" source="/Web capture_5-11-2023_10132_www.spaceflight.dev.jpeg" alt-text="www.spaceflight.dev":::
 
 ## Features: Blazor web application using:  
 1. Components implementation using razor syntax (C#, HTML, CSS, CSHTML)  
