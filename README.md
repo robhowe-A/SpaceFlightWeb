@@ -16,4 +16,4 @@ This repository is a stripped version of the live project development [www.space
 5. JSON file repository    
 
 Projected features:  
-- DB backend hosting articles (currently, the web app is storing API fetches to local (see Server/Services/JsonFileFetchService.cs), then fetched via API from client web assembly  
+- API fetches of article data in JSON format (see Server/Services/JsonFileFetchService.cs) provide the content used in the web assembly page  
