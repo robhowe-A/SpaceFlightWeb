@@ -1,0 +1,47 @@
+﻿@page "/apoddetailsdisp"
+@inject IHttpClientFactory _clientFactory
+@using Spaceflight_News_Server.Models;
+
+<style>
+    main {
+        background: var(--secondary1);
+        max-width: 45em;
+        margin: 0 auto;
+    }
+</style>
+
+@if (apod == null)
+{
+    <p><em>Loading...</em></p>
+}
+else{
+
+    <!-- Today APOD modal-->
+    <div id="apoddetails">
+        <div class="apod__content">
+            <h2 id="apiDate2">@apod.date</h2>
+            @if (apod.media == "video")
+            {
+                <iframe class="iframeLg" controls
+                    src="@apod.hdurl" allowfullscreen="true">
+                </iframe>
+            }
+            else
+            {
+                <img class="apiHDimg2" src="@apod.hdurl" alt="image_empty">
+            }
+            <h3 id="apiTitle">@apod.apodtitle</h3>
+            <p id="apiExplanation">@apod.description</p>
+        </div> <!-- Today APOD modal end-->
+        </div>
+}
+@code {
+    private APOD? apod;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = _clientFactory.CreateClient("APIClient");
+        
+        apod = await httpClient.GetFromJsonAsync<APOD>(@"https://api.nasa.gov/planetary/apod?api_key=<Redacted for privacy>");
+    }
+}
