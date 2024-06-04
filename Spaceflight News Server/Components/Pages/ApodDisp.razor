@@ -45,8 +45,7 @@ else{
     protected override async Task OnInitializedAsync()
     {
         var httpClient = _clientFactory.CreateClient("APIClient");
-        apod = await httpClient.GetFromJsonAsync<APOD>(@"https://api.nasa.gov/planetary/apod?api_key=        //apods = await httpClient.GetFromJsonAsync<APOD[]>("/contentAPI/apod");
-");
+        apod = await httpClient.GetFromJsonAsync<APOD>(@"https://api.nasa.gov/planetary/apod?api_key=<Redacted for privacy>");
 
         try
         {
