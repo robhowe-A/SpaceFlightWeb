@@ -1,10 +1,8 @@
-## UPDATE 6/3
-While live, the site doesn't load within cloudflare's time limit. I was successful to convert JSON file writes to MySQL database entity system (far below diagram), however, I will not be able to host the web application in cloud due to the extra costs. This code repository remains public for viewing; it is stripped of API keys and database connection strings.
+## UPDATE 7/1/24
+This site is now live! This code repository serves to host the previous iteration of the site's live code. Today, the code is different and is not open source. The site, however, is available for public viewing and querying the database at at [www.roberthowell.dev](https://www.roberthowell.dev).
 
-
-
-Site is live at [www.roberthowell.dev](https://www.roberthowell.dev).
-
+### ARCHIVE  
+**Everything below is an archive version of this repository**  
 This repository is a stripped version of the live project development [www.roberthowell.dev](https://www.roberthowell.dev). Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is the site's custom C#, CSHTML, CSS, etc. implemented in the site.
 
 <img src="/readme/Web%20capture_5-11-2023_10132_www.spaceflight.dev.jpeg" alt="www.spaceflight.dev_11=5=23" width="75%" margin="auto" />
