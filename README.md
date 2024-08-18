@@ -1,5 +1,5 @@
 ## UPDATE 7/1/24
-This site is now live! This code repository serves to host the previous iteration of the site's live code. Today, the code is different and is not open source. The site, however, is available for public viewing and querying the database at at [www.roberthowell.dev](https://www.roberthowell.dev).
+This site is now live! This code repository serves to host the previous iteration of the site's live code. Today, the code and code stack is very different and is not open source. The site, however, is available for public viewing and querying the database at at [www.roberthowell.dev](https://www.roberthowell.dev).
 
 ### ARCHIVE  
 **Everything below is an archive version of this repository**  
