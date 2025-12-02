@@ -1,14 +1,17 @@
-## UPDATE 7/1/24
-This site is now live! This code repository serves to host the previous iteration of the site's live code. Today, the code and code stack is very different and is not open source. The site, however, is available for public viewing and querying the database at at [www.roberthowell.dev](https://www.roberthowell.dev).
+# SpaceFlightWeb  
+SpaceflightWeb is a website created to showcase the application of developer skill sets. Details are written below about the project, from its creation.  
 
-### ARCHIVE  
+## 7-1-2024 Update  
+This site is now live! This code repository serves to host the previous iteration of the site's live code. Today, the code and code stack is very different and is not open source. The site, however, is available for public viewing and querying the database.  
+
+## Archive  
 **Everything below is an archive version of this repository**  
 This repository is a stripped version of the live project development [www.roberthowell.dev](https://www.roberthowell.dev). Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is the site's custom C#, CSHTML, CSS, etc. implemented in the site.
 
 <img src="/readme/Web%20capture_5-11-2023_10132_www.spaceflight.dev.jpeg" alt="www.spaceflight.dev_11=5=23" width="75%" margin="auto" />
 
-## Features: Blazor web application using:
-
+## Features  
+This is a blazor web application using:  
 1. Components implementation using razor syntax (C#, HTML, CSS, CSHTML)
 2. Multi-project solution developed in Visual Studio
 3. ASP.NET API endpoint:
@@ -20,7 +23,7 @@ This repository is a stripped version of the live project development [www.rober
 7. API fetches of article data in JSON format (see Server/Services/JsonFileFetchService.cs) provide the content used in the web assembly page
 
 
-### Upcoming: 
+## Upcoming  
 - Database backend:  
  > <img src="readme\WebFarm.drawio.svg" alt="Website topology www.spaceflight.dev_11-17-23" width="75%" margin="auto" />  
  > 
