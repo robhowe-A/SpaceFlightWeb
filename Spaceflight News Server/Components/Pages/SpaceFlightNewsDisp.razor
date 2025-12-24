@@ -1,0 +1,20 @@
+﻿@page "/SpaceFlightNews"
+
+<PageTitle>SpaceFlight News Home</PageTitle>
+
+
+@{var hubbleImage = "/img/STScI-01F8AKVTTWX73WSMZNDQXAFS00.jpg";}
+<header class="SpaceFlight-intro">
+    <h1 class="SpaceFlight-current">Spaceflight News</h1>
+    <p>
+        SpaceFlight is all over the place. Below are highlights of Hubble and Webb; both are space telescopes and current missions at the NASA. Each project has it's own website at the buttons below.
+    </p>
+    <img id="hubble-pic" src="@(hubbleImage)" alt="Hubble-in-space">
+    <div>
+        <a href="https://hubblesite.org/" class="btn btn--primary" target="_blank">Hubble</a>
+        <a href="https://webbtelescope.org/" class="btn btn--primary" target="_blank">Webb</a>
+    </div>
+</header>
+
+@code {
+}

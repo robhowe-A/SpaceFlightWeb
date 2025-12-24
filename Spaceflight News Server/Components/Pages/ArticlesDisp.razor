@@ -1,0 +1,82 @@
+﻿@page "/ArticlesDisp"
+@inject IHttpClientFactory _clientFactory
+@using Spaceflight_News_Server.Models;
+@using Microsoft.EntityFrameworkCore;
+@using Spaceflight_News_Server.Data;
+
+@inject IDbContextFactory<Spaceflight_News_MySQLContext> DbFactory
+
+<PageTitle>Articles</PageTitle>
+
+@if (articles == null)
+{
+    <style>
+        main {
+            background: var(--secondary1);
+        }
+    </style>
+    <p><em>Loading...</em></p>
+}
+else{
+    <div class=" text-center">
+        <div id="art-container">
+            @foreach (var service in articles)
+            {
+                <div class="article">
+                    <div class="art_grid_container row">
+                        <img class="art_picture col" src="@service.textURL" alt="Article Picture">
+                        <h3 class="art_header col"><a href="@service.url" target="_blank" class="link--primary">@service.title</a></h3>
+                        <div class="art_descrip col">@service.summary<br><br>
+                            <h5 class="art_date">@service.date</h5>
+                        </div>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+}
+
+@code {
+    private Result? results;
+    private IList<Article>? articles;
+
+    /// <summary>
+    /// The <see cref="ContactContext"/> for database access.
+    /// </summary>
+    private Spaceflight_News_MySQLContext? Context { get; set; }
+
+    /// <summary>
+    /// Avoid concurrent requests
+    /// </summary>
+    private bool Busy;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = _clientFactory.CreateClient("APIClient");
+        results = await httpClient.GetFromJsonAsync<Result>(@"https://api.spaceflightnewsapi.net/v4/articles/?limit=10?offset=5");
+        articles = results.articles;
+
+        Busy = true;
+
+        try
+        {
+            Context = DbFactory.CreateDbContext();
+
+            foreach (Article a in results.articles)
+            {
+                if (!Context.Article.Any(x => x.id == a.id))
+                {
+                    Context.Article.Add(a);
+                    await Context.SaveChangesAsync();
+                }
+                
+            }
+        }
+        finally
+        {
+            Busy = false;
+        }
+
+        await base.OnInitializedAsync();
+    }
+}

@@ -1,0 +1,68 @@
+﻿@page "/apoddisp"
+@inject IHttpClientFactory _clientFactory
+@using Spaceflight_News_Server.Models;
+@using Microsoft.EntityFrameworkCore;
+@using Spaceflight_News_Server.Data;
+@using System.Diagnostics
+
+@inject IDbContextFactory<Spaceflight_News_MySQLContext> DbFactory
+
+<PageTitle>Astronomy Picture of the Day</PageTitle>
+
+@if (apod == null)
+{
+    <p><em>Loading...</em></p>
+}
+else{
+        <!-- Today APOD card-->
+        <aside id="nasa__apod" class="nasa__card">
+            @if (apod.media == "video") 
+                {
+                    <iframe class="iframeSm" controls
+                        src="@apod.hdurl" allowfullscreen="true">
+                    </iframe>
+                }                
+                else {
+                    <img class="apiHDimg2" src="@apod.hdurl" alt="image_empty">
+                }
+            <h2 id="apiTitle">@apod.apodtitle</h2>
+            <h3 id="API">Astonomy&nbsp;Picture of&nbsp;the&nbsp;Day</h3>
+            <h4 id="apiDate">@apod.date</h4>
+            <div>
+                <a href="apoddetailsdisp" class="btn btn--secondary">View</a>
+                <a href="apodranddisp" class="btn btn--secondary">Random</a>
+            </div>
+        </aside><!-- Today APOD card end-->
+}
+@code {
+    private APOD? apod;
+
+    /// <summary>
+    /// The <see cref="ContactContext"/> for database access.
+    /// </summary>
+    private Spaceflight_News_MySQLContext? Context { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = _clientFactory.CreateClient("APIClient");
+        apod = await httpClient.GetFromJsonAsync<APOD>(@"https://api.nasa.gov/planetary/apod?api_key=<Redacted for privacy>");
+
+        try
+        {
+            Context = DbFactory.CreateDbContext();
+
+            if (!Context.APOD.Any(x => x.date == apod.date))
+            {
+                Context.APOD.Add(apod);
+                await Context.SaveChangesAsync();
+            }
+            //Write to output to find the source
+        }
+        catch
+        {
+            Console.WriteLine("Error uploading apod fetch.");
+        }
+
+        await base.OnInitializedAsync();
+    }
+}

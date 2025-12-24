@@ -1,0 +1,24 @@
+﻿h3, h2, p {
+    text-align: center;
+    margin-block: 1em;
+}
+
+.apod__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.apiHDimg2 { 
+    max-height: 80vh;
+    margin: 0 auto;
+}
+
+#apoddetails {
+    margin: 0 auto 0 auto;
+}
+
+#apiExplanation { 
+    margin-bottom: 8em;
+}

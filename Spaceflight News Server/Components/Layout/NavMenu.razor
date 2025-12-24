@@ -1,0 +1,36 @@
+﻿<div class="container-fluid">
+    <a class="navbar-brand" href="">SpaceFlight News</a>
+    <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<nav class="NavigationItems @NavMenuCssClass" @onclick="ToggleNavMenu">
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="ArticlesDisp">
+            <span class="oi oi-copywriting" aria-hidden="true"></span> Articles
+        </NavLink>
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="ApodDetailsDisp">
+            <span class="oi oi-beaker" aria-hidden="true"></span> APOD
+        </NavLink>
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="apodrandDisp">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Random&nbsp;APOD
+        </NavLink>
+    </div>
+
+</nav>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
