@@ -6,9 +6,10 @@ This site is now live! This code repository serves to host the previous iteratio
 
 ## Archive  
 **Everything below is an archive version of this repository**  
-This repository is a stripped version of the live project development [www.roberthowell.dev](https://www.roberthowell.dev). Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is the site's custom C#, CSHTML, CSS, etc. implemented in the site.
+This repository is a stripped version of the live project development [www.rh-snapi-site.com](https://www.rh-snapi-site.com/) . Folders/Files irrelevant of project's creation have been removed. In that sense, this repository is the site's custom C#, CSHTML, CSS, etc. implemented in the site.  
+****Note: This website's domain is moving away from [www.roberthowell.dev](https://www.roberthowell.dev/) and remains active; however, this is temporary and the contents on `www.roberthowell.dev` will be replaced. At current, both domains share the same content. This also means both domains function the same.**   
 
-<img src="/readme/Web%20capture_5-11-2023_10132_www.spaceflight.dev.jpeg" alt="www.spaceflight.dev_11=5=23" width="75%" margin="auto" />
+<img src="./readme/Web_capture_5-11-2023_10132_www.spaceflight.dev.jpeg" alt="www.spaceflight.dev_11=5=23" width="75%" margin="auto" />
 
 ## Features  
 This is a blazor web application using:  
